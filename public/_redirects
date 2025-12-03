@@ -1,1 +1,2 @@
+/api/*  https://macety.eastus2.cloudapp.azure.com/api/:splat  200
 /*    /index.html   200
