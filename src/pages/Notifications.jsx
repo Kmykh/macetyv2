@@ -1,11 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import './Page.css'; // Reutilizamos estilos
-
-// --- Links de tu API (ejemplos) ---
-// 1. El link para OBTENER las notificaciones viejas
-const NOTIFICATIONS_API_URL = 'http://localhost:8081/api/v1/notifications';
-// 2. El link del WEBSOCKET para escuchar las nuevas
-const NOTIFICATIONS_WEBSOCKET_URL = 'ws://localhost:8081/api/v1/notifications/subscribe';
+import { API_BASE_URL } from '../config';
+import { API_BASE_URL_WS } from '../config';
 
 function Notifications() {
   // --- 1. Usamos useState para guardar las notificaciones ---
@@ -23,7 +19,7 @@ function Notifications() {
         const token = localStorage.getItem('access_token');
         if (!token) throw new Error('No estás autenticado.');
 
-        const response = await fetch(NOTIFICATIONS_API_URL, {
+        const response = await fetch(`${API_BASE_URL}/api/v1/notifications`, {
           headers: { 'Authorization': `Bearer ${token}` }
         });
 
@@ -43,7 +39,7 @@ function Notifications() {
     // Función para conectarse al WebSocket y escuchar
     const connectWebSocket = () => {
       // (Tu amigo te dará la URL correcta)
-      const socket = new WebSocket(NOTIFICATIONS_WEBSOCKET_URL);
+      const socket = new WebSocket(`${API_BASE_URL_WS}/api/v1/notifications/subscribe`);
 
       // Cuando el socket se abre
       socket.onopen = () => {
