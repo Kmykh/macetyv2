@@ -37,7 +37,17 @@ function Login() {
         }),
       });
 
-      const data = await response.json(); 
+      // Handle empty or invalid JSON responses
+      const text = await response.text();
+      let data = {};
+      if (text) {
+        try {
+          data = JSON.parse(text);
+        } catch (parseError) {
+          console.error('Error parsing JSON:', parseError, 'Raw response:', text);
+          throw new Error('Respuesta inválida del servidor');
+        }
+      }
 
       if (!response.ok) {
         throw new Error(data.message || 'Error del servidor');
