@@ -160,14 +160,25 @@ function Profile() {
 
       <h1 className="profile-title">Perfil</h1>
       
-      <div className="profile-user-info" style={{ textAlign: 'center', marginBottom: '30px' }}>
+      <div className="profile-user-info">
+        <div className="profile-avatar-wrapper">
+          <div className="profile-avatar-placeholder">
+            {user.name ? user.name.charAt(0).toUpperCase() : user.first_name?.charAt(0).toUpperCase() || 'U'}
+          </div>
+        </div>
         <div className="profile-user-details">
-          <h2 style={{ fontSize: '1.8rem', color: '#2c3e50' }}>
-            {user.first_name} {user.last_name}
-          </h2> 
-          <p style={{ color: '#7f8c8d' }}>
-            {user.location_city || user.email}
-          </p> 
+          <h2>{user.name || `${user.first_name || ''} ${user.last_name || ''}`.trim() || 'Usuario'}</h2>
+          <p><i className="fa-solid fa-envelope"></i> {user.email}</p>
+        </div>
+        <div className="profile-stats">
+          <div className="profile-stat">
+            <div className="profile-stat-value">0</div>
+            <div className="profile-stat-label">Plantas</div>
+          </div>
+          <div className="profile-stat">
+            <div className="profile-stat-value">0</div>
+            <div className="profile-stat-label">Días activo</div>
+          </div>
         </div>
       </div>
       
@@ -186,7 +197,6 @@ function Profile() {
           <button 
             onClick={openDeleteModal} 
             className="settings-link delete-account-btn"
-            style={{ color: '#e74c3c' }} 
           >
             <i className="fa-solid fa-trash-can"></i>
             <span>Eliminar Cuenta</span>

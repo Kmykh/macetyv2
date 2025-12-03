@@ -1,83 +1,186 @@
 /* --- Estilos para la Página de Perfil --- */
 
 .profile-page {
-  /* Fondo blanco como en la imagen */
-  background-color: #ffffff;
+  background: linear-gradient(180deg, #f8faf8 0%, #ffffff 100%);
   padding: 2.5rem 4rem; 
   height: 100%;
-  min-height: 100vh; /* Asegura que ocupe toda la altura */
-  box-sizing: border-box; /* Incluye el padding en la altura */
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+@media (max-width: 640px) {
+  .profile-page {
+    padding: 1.5rem 1.25rem;
+  }
 }
 
 .profile-title {
-  font-size: 2.5rem;
+  font-size: 2rem;
   font-weight: 700;
-  color: #222;
+  color: #2a4a3a;
   margin-top: 0;
   margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.profile-title::before {
+  content: '';
+  width: 4px;
+  height: 28px;
+  background: linear-gradient(180deg, #4CAF50 0%, #81C784 100%);
+  border-radius: 2px;
 }
 
 /* Bloque de Info de Usuario */
 .profile-user-info {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
-  margin-bottom: 3rem;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  padding: 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.04);
+  border: 1px solid #e8f5e9;
+  position: relative;
+  overflow: hidden;
+}
+
+.profile-user-info::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 80px;
+  background: linear-gradient(135deg, #e8f5e9 0%, #c8e6c9 100%);
+}
+
+.profile-avatar-wrapper {
+  position: relative;
+  z-index: 1;
+  margin-top: 20px;
 }
 
 .profile-avatar {
-  width: 90px;
-  height: 90px;
+  width: 100px;
+  height: 100px;
   border-radius: 50%;
   object-fit: cover;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-avatar-placeholder {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #4CAF50 0%, #81C784 100%);
+  display: grid;
+  place-items: center;
+  font-size: 2.5rem;
+  color: #fff;
+  font-weight: 700;
+  border: 4px solid #fff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.profile-user-details {
+  text-align: center;
+  z-index: 1;
 }
 
 .profile-user-details h2 {
   margin: 0;
-  font-size: 1.75rem;
-  font-weight: 600;
-  color: #222;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2a4a3a;
 }
 
 .profile-user-details p {
-  margin: 0.25rem 0 0;
-  font-size: 1rem;
-  color: #9dcb8a; /* Verde */
-  font-weight: 500;
+  margin: 0.5rem 0 0;
+  font-size: 0.95rem;
+  color: #666;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+}
+
+.profile-user-details p i {
+  color: #4CAF50;
+}
+
+.profile-stats {
+  display: flex;
+  gap: 2rem;
+  margin-top: 1rem;
+  padding-top: 1rem;
+  border-top: 1px solid #f0f0f0;
+  z-index: 1;
+}
+
+.profile-stat {
+  text-align: center;
+}
+
+.profile-stat-value {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #2a4a3a;
+}
+
+.profile-stat-label {
+  font-size: 0.8rem;
+  color: #888;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
 }
 
 /* Lista de Ajustes */
 .settings-title {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   font-weight: 600;
-  color: #333;
-  margin-bottom: 1.5rem;
+  color: #888;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-size: 0.85rem;
 }
 
 .settings-list {
   list-style: none;
   padding: 0;
   margin: 0;
-  max-width: 400px; /* Limita el ancho de la lista */
+  max-width: 500px;
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  border: 1px solid #f0f0f0;
+  overflow: hidden;
 }
 
 .settings-list li {
-  margin-bottom: 0.5rem;
+  margin: 0;
+}
+
+.settings-list li:not(:last-child) {
+  border-bottom: 1px solid #f5f5f5;
 }
 
 .settings-link {
   display: flex;
   align-items: center;
   gap: 1rem;
-  padding: 1rem 1.25rem;
-  border-radius: 10px;
+  padding: 1.1rem 1.25rem;
   text-decoration: none;
   color: #333;
   font-weight: 500;
   font-size: 1rem;
-  transition: background-color 0.2s, color 0.2s;
-  
-  /* Para el botón de logout */
+  transition: background-color 0.2s, color 0.2s, transform 0.2s;
   width: 100%;
   background: none;
   border: none;
@@ -86,24 +189,73 @@
 }
 
 .settings-link:hover {
-  background-color: #f4f4f4;
+  background-color: #f9fBf9;
+  transform: translateX(4px);
 }
 
 .settings-link i {
-  font-size: 1.2rem;
+  font-size: 1.1rem;
+  width: 36px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: #f5f5f5;
   color: #555;
-  width: 20px; /* Ancho fijo para alinear texto */
-  text-align: center;
+  transition: all 0.2s;
+}
+
+.settings-link:hover i {
+  background: #e8f5e9;
+  color: #4CAF50;
+}
+
+.settings-link span {
+  flex: 1;
+}
+
+.settings-link::after {
+  content: '\f054';
+  font-family: 'Font Awesome 6 Free';
+  font-weight: 900;
+  color: #ccc;
+  font-size: 0.8rem;
 }
 
 /* Estilo especial para el botón de cerrar sesión */
 .logout-btn {
-  color: #D32F2F; /* Rojo */
+  color: #D32F2F;
 }
 .logout-btn i {
   color: #D32F2F;
+  background: #FFEBEE;
 }
 .logout-btn:hover {
-  background-color: #FFEBEE; /* Fondo rosa claro */
-  color: #D32F2F;
+  background-color: #FFF5F5;
+}
+.logout-btn:hover i {
+  background: #FFCDD2;
+  color: #C62828;
+}
+.logout-btn::after {
+  display: none;
+}
+
+/* Estilo para el botón de eliminar cuenta */
+.delete-account-btn {
+  color: #e74c3c;
+}
+.delete-account-btn i {
+  color: #e74c3c;
+  background: #fde8e8;
+}
+.delete-account-btn:hover {
+  background-color: #fef2f2;
+}
+.delete-account-btn:hover i {
+  background: #fecaca;
+  color: #dc2626;
+}
+.delete-account-btn::after {
+  display: none;
 }
