@@ -44,6 +44,14 @@ function Sidebar() {
           </div>
           <span>Añadir planta</span>
         </NavLink>
+        <NavLink to="/store" className="sidebar-link">
+          <i className="fa-solid fa-store"></i>
+          <span>Tienda</span>
+        </NavLink>
+        <NavLink to="/comunidad" className="sidebar-link">
+          <i className="fa-solid fa-users"></i>
+          <span>Comunidad</span>cc 
+        </NavLink>
 
         
 

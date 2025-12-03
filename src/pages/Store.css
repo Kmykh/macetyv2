@@ -1,0 +1,150 @@
+/* --- Estilos para la Página de Tienda --- */
+.store-page {
+  background-color: #F7FCF7;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+/* 1. Cabecera de la Tienda (Search + Cart) */
+.store-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1.5rem 4rem; /* Padding igual que Perfil */
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.search-wrapper {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  width: 300px;
+}
+
+.search-wrapper i {
+  color: #888;
+}
+
+.search-input {
+  border: none;
+  background: none;
+  outline: none;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+.cart-button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.2s;
+}
+.cart-button:hover {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+/* 2. Navegación Secundaria de la Tienda */
+.store-nav {
+  display: flex;
+  gap: 1.5rem;
+  padding: 1.5rem 4rem;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* --- ESTILOS ACTUALIZADOS PARA EL BOTÓN --- */
+.store-nav-link {
+  /* Reseteamos los estilos de botón */
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  font-family: inherit; /* Usa la misma fuente que el resto de la app */
+
+  /* Tus estilos visuales */
+  text-decoration: none;
+  color: #666;
+  font-weight: 500;
+  font-size: 0.95rem;
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid transparent;
+  transition: all 0.2s;
+}
+
+.store-nav-link:hover {
+  color: #000;
+}
+
+/* Esta clase 'active' la añade React dinámicamente */
+.store-nav-link.active {
+  color: #2a4a3a; /* Verde oscuro */
+  font-weight: 600;
+  border-bottom-color: #9dcb8a; /* Verde claro */
+}
+
+/* 3. Contenido y Secciones */
+.store-content {
+  padding: 2rem 4rem;
+}
+
+.store-section {
+  margin-bottom: 3.5rem;
+}
+
+.store-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin: 0 0 1.5rem 0;
+}
+
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+.cart-button {
+  background: none;
+  border: 1px solid #ddd;
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 1.1rem;
+  color: #333;
+  transition: all 0.2s;
+  position: relative; /* ¡Importante! */
+}
+.cart-button:hover {
+  background-color: #f9f9f9;
+  border-color: #bbb;
+}
+
+/* 2. Estilos del badge (el círculo rojo) */
+.cart-badge {
+  position: absolute;
+  top: -8px; /* Lo mueve hacia arriba */
+  right: -8px; /* Lo mueve a la derecha */
+  background-color: #D32F2F; /* Rojo */
+  color: #ffffff;
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  
+  /* Centra el número */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  border: 2px solid #ffffff; /* Borde blanco */
+}

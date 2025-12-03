@@ -1,0 +1,183 @@
+/* --- Estilos para la Página de Comunidad --- */
+.community-page {
+  background-color: #F7FCF7;
+  padding: 2.5rem 4rem;
+  height: 100%;
+  min-height: 100vh;
+  box-sizing: border-box;
+}
+
+.community-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #222;
+  margin-top: 0;
+  margin-bottom: 0.5rem;
+}
+
+.community-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin-bottom: 2rem;
+}
+
+/* Barra de Búsqueda */
+.community-search-bar {
+  display: flex;
+  align-items: center;
+  background-color: #f5f5f5;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  width: 100%;
+  max-width: 500px;
+  margin-bottom: 3rem;
+  border: 1px solid #eee;
+}
+
+.community-search-bar i {
+  color: #888;
+}
+
+.community-search-bar input {
+  border: none;
+  background: none;
+  outline: none;
+  padding-left: 0.75rem;
+  font-size: 1rem;
+  width: 100%;
+}
+
+/* Secciones */
+.featured-posts-section,
+.all-posts-section {
+  margin-bottom: 3rem;
+}
+
+.featured-posts-section h2,
+.all-posts-section h2 {
+  font-size: 1.5rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Publicaciones Destacadas */
+.featured-posts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem;
+}
+
+.featured-post-card {
+  background-color: #f9f9f9;
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  border: 1px solid #eee;
+  overflow: hidden;
+}
+
+.featured-post-info {
+  flex: 1;
+}
+
+.featured-post-info h3 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #222;
+  margin: 0 0 0.5rem 0;
+}
+.featured-post-info p {
+  font-size: 0.9rem;
+  color: #666;
+  margin: 0;
+  line-height: 1.5;
+}
+
+.featured-post-image {
+  width: 120px;
+  height: 120px;
+  border-radius: 8px;
+  object-fit: cover;
+}
+
+/* Todas las Publicaciones (Feed) */
+.post-feed {
+  max-width: 800px; /* Limita el ancho del feed */
+}
+
+.post-item {
+  display: flex;
+  gap: 1rem;
+  padding: 1.5rem 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+.post-item:last-child {
+  border-bottom: none;
+}
+
+.post-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.post-body {
+  flex: 1;
+}
+
+.post-header {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-user-name {
+  font-weight: 600;
+  color: #333;
+}
+
+.post-timestamp {
+  font-size: 0.85rem;
+  color: #888;
+}
+
+.post-content {
+  font-size: 0.95rem;
+  color: #555;
+  line-height: 1.6;
+  margin: 0 0 1rem 0;
+}
+
+.post-actions {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.action-btn {
+  background: none;
+  border: none;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  color: #777;
+  font-size: 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-weight: 500;
+}
+
+.action-btn i {
+  font-size: 1.1rem;
+}
+
+.action-btn:hover {
+  color: #2a4a3a;
+}

@@ -222,3 +222,53 @@
   border-radius: 12px;
   margin: 2rem;
 }
+
+/* --- Macety Overview --- */
+.macety-overview {
+  margin-bottom: 1.5rem;
+}
+.macety-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+.macety-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+.macety-card h3 { margin: 0; font-size: 1.5rem; color: #2a4a3a }
+.macety-card p { margin: 0.25rem 0 0; color: #666 }
+.macety-cta { display:flex; align-items:center; justify-content:space-between; gap:1rem; background:#fff; padding:1rem; border-radius:12px }
+
+/* --- Community --- */
+.community-section { margin-bottom: 1.5rem }
+.community-list { display:flex; flex-direction:column; gap:0.75rem }
+.community-post { display:flex; gap:1rem; background:#fff; padding:1rem; border-radius:12px; box-shadow:0 4px 12px rgba(0,0,0,0.04) }
+.post-avatar { width:44px; height:44px; border-radius:50%; background:#E8F5E9; display:grid; place-items:center; font-weight:700; color:#2a4a3a }
+.post-meta { display:flex; gap:0.5rem; align-items:center }
+.post-time { color:#888; font-size:0.85rem }
+.post-text { margin:0.5rem 0 0 }
+.post-actions { display:flex; gap:1rem; margin-top:0.5rem; color:#777 }
+
+/* --- Store --- */
+.store-section { margin-bottom: 1.5rem }
+.store-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap:1rem }
+.store-card { background:#fff; border-radius:12px; overflow:hidden; box-shadow:0 6px 18px rgba(0,0,0,0.04); display:flex; flex-direction:column }
+.store-image { width:100%; height:140px; object-fit:cover }
+.store-body { padding:0.75rem; display:flex; flex-direction:column; gap:0.5rem; flex:1 }
+.store-name { margin:0; font-size:1rem }
+.store-desc { margin:0; color:#666; font-size:0.9rem }
+.store-footer { margin-top:auto; display:flex; justify-content:space-between; align-items:center }
+.store-price { font-weight:700; color:#2a4a3a }
+
+/* Button primary used across components */
+.btn-primary { background:#4CAF50; color:#fff; border:none; padding:0.5rem 0.75rem; border-radius:8px; cursor:pointer }
+
+/* Small responsive tweaks */
+@media (max-width: 640px) {
+  .macety-cta { flex-direction:column; align-items:flex-start }
+}

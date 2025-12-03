@@ -2,6 +2,8 @@ import React from 'react';
 import { Routes, Route, Navigate } from 'react-router-dom';
 import Layout from './components/Layout';
 import ProtectedRoute from './components/ProtectedRoute';
+import Community from './pages/Community';
+import Store from './pages/Store';
 
 // Importaciones de Páginas
 import Login from './pages/Login';
@@ -34,7 +36,9 @@ function App() {
         <Route path="/profile" element={<ProtectedRoute><Profile /></ProtectedRoute>} />
         <Route path="/editar-perfil" element={<ProtectedRoute><EditProfile /></ProtectedRoute>} />
         <Route path="/notifications" element={<ProtectedRoute><Notifications /></ProtectedRoute>} />
-        <Route path="/help" element={<ProtectedRoute><Help /></ProtectedRoute>} />        
+        <Route path="/help" element={<ProtectedRoute><Help /></ProtectedRoute>} />   
+        <Route path="/store" element={<ProtectedRoute><Store /></ProtectedRoute>} />
+        <Route path="/comunidad" element={<ProtectedRoute><Community /></ProtectedRoute>} />     
 
         {/* --- Rutas del Asistente de Nueva Planta --- */}
         <Route path="add-plant" element={<ProtectedRoute><AddPlantLayout /></ProtectedRoute>}>
