@@ -7,7 +7,9 @@ function Store({ products = [] }) {
       <div className="store-grid">
         {products.map((p) => (
           <div className="store-card" key={p.id}>
-            <img src={p.image} alt={p.name} className="store-image" />
+            <div className="store-icon-wrapper">
+              <i className={p.icon || 'fa-solid fa-box'}></i>
+            </div>
             <div className="store-body">
               <h4 className="store-name">{p.name}</h4>
               <p className="store-desc">{p.description}</p>

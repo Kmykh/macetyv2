@@ -14,9 +14,10 @@ const mockActivities = [
 ];
 
 const mockProducts = [
-  { id: 'p1', name: 'Sustrato Universal 2kg', description: 'Mezcla rica en nutrientes para uso diario.', price: '8.99', image: '/src/assets/sustrato_universal.jfif' },
-  { id: 'p2', name: 'Soporte Ajustable', description: 'Soporte ajustable con drenaje.', price: '14.50', image: '/src/assets/soporte_ajustable.jfif' },
-  { id: 'p3', name: 'Taller Jardinería', description: 'Acceso a taller online: cuidados básicos.', price: '25.00', image: '/src/assets/talleres_jardineria.jfif' },
+  { id: 'p1', name: 'Sustrato Universal 2kg', description: 'Mezcla rica en nutrientes para uso diario.', price: '8.99', icon: 'fa-solid fa-box' },
+  { id: 'p2', name: 'Soporte Ajustable', description: 'Soporte ajustable con drenaje.', price: '14.50', icon: 'fa-solid fa-arrows-up-down' },
+  { id: 'p3', name: 'Taller Jardinería', description: 'Acceso a taller online: cuidados básicos.', price: '25.00', icon: 'fa-solid fa-graduation-cap' },
+  { id: 'p4', name: 'Maceta Ecológica', description: 'Maceta biodegradable de fibra de coco.', price: '12.00', icon: 'fa-solid fa-seedling' },
 ];
 
 const mockPosts = [
